@@ -25,6 +25,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
 
-app.listen(process.env.PORT, () => {
-  console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
+const port = process.env.PORT || process.env.LOCAL_PORT;
+app.listen(port, () => {
+  console.log(`Servidor corriendo en puerto ${port}`);
 });
