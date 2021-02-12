@@ -68,7 +68,8 @@ const userLogin = async (req, res = response) => {
     return res.status(201).json({
       ok: true,
       msg: 'login',
-      user: { email, password },
+      uid: user.id,
+      name: user.name,
       token,
     });
   } catch (error) {
